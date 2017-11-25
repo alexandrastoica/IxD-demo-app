@@ -1,0 +1,12 @@
+page-story {
+  .toolbar-background {
+    background-color: transparent !important;
+    border-style: none !important;
+  }
+  .toolbar-title {
+    color: color($colors, primary) !important;
+  }
+  .bar-button-default {
+    color: color($colors, primary) !important;
+  }
+}

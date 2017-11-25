@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+      <button ion-button icon-only (click)="ar()">
+        <ion-icon name="glasses"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="filter()">
+        <ion-icon name="options"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Explore</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div #map id="map"></div>
+  <map-pin
+    *ngFor="let pin of pins; let i = index"
+    (click)="openStory()"
+    id="'pin'+i" [style.top.px]="pin.h"
+    [style.left.px]="pin.w">
+  </map-pin>
+</ion-content>
