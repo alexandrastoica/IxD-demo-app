@@ -1,5 +1,35 @@
 page-filters {
+  .scroll-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+  }
+
   .disabled {
     opacity: 0.5;
   }
+
+  ion-icon {
+    font-size: 2em;
+  }
+
+  .col {
+    text-align: center;
+    ion-icon {
+      cursor: pointer;
+      font-size: 3em;
+      line-height: 50px;
+      width: 50px;
+      border-radius: 100px;
+      background: color($colors, secondary);
+      color: color($colors, light);
+    }
+  }
+
+  #confirm {
+    margin-top: 100px;
+  }
+
+
 }

@@ -14,39 +14,50 @@
     <ion-row justify-content-center>
       <ion-col>
         <ion-icon name="restaurant"></ion-icon>
-        Eating Out
       </ion-col>
       <ion-col>
-        2 of 3
+        <ion-icon name="calendar"></ion-icon>
       </ion-col>
       <ion-col>
-        3 of 3
-      </ion-col>
-    </ion-row>
-
-    <ion-row justify-content-center>
-      <ion-col>
-        1 of 3
-      </ion-col>
-      <ion-col>
-        2 of 3
-      </ion-col>
-      <ion-col>
-        3 of 3
+        <ion-icon name="megaphone"></ion-icon>
       </ion-col>
     </ion-row>
 
     <ion-row justify-content-center>
       <ion-col>
-        1 of 3
+        Eating out
       </ion-col>
       <ion-col>
-        2 of 3
+        Events
       </ion-col>
       <ion-col>
-        3 of 3
+        Announcements
+      </ion-col>
+    </ion-row>
+
+    <ion-row justify-content-center>
+      <ion-col>
+        <ion-icon name="bulb"></ion-icon>
+      </ion-col>
+      <ion-col>
+        <ion-icon name="pizza"></ion-icon>
+      </ion-col>
+      <ion-col>
+        <ion-icon [class.disabled]="active" (click)="!active" name="chatbubbles"></ion-icon>
+      </ion-col>
+    </ion-row>
+
+    <ion-row justify-content-center>
+      <ion-col>
+        Tips
+      </ion-col>
+      <ion-col>
+        Supermarkets
+      </ion-col>
+      <ion-col>
+        Questions
       </ion-col>
     </ion-row>
   </ion-grid>
-  <button ion-button round full (click)="exit()">Done</button>
+  <button id="confirm" ion-button round full (click)="exit()">Done</button>
 </ion-content>
