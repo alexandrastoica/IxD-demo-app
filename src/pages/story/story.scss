@@ -9,4 +9,42 @@ page-story {
   .bar-button-default {
     color: color($colors, primary) !important;
   }
+  .photo {
+    margin-top: -55px;
+    background: url('../../assets/imgs/story.jpg') no-repeat;
+    background-size: cover;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+  ion-avatar {
+    height: 60px;
+    width: 60px;
+    img {
+      height: 60px !important;
+      width: 60px !important;
+    }
+  }
+  .item {
+    background: transparent !important;
+    color: color($colors, green) !important;
+    p {
+      color: color($colors, orange) !important;
+    }
+  }
+  .button {
+    background: transparent !important;
+    color: color($colors, primary) !important;
+  }
+  .close {
+    font-size: 4em;
+  }
+  .content-story {
+    margin-top: 680px;
+    .item {
+      color: color($colors, orange) !important;
+    }
+  }
 }

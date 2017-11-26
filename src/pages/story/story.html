@@ -1,21 +1,26 @@
-<ion-header>
-  <ion-navbar>
-    <ion-buttons right>
-      <button ion-button icon-only (click)="close()">
-        <ion-icon name="close"></ion-icon>
-      </button>
-    </ion-buttons>
-    <ion-buttons left>
-
-    </ion-buttons>
-  </ion-navbar>
-</ion-header>
-
-
 <ion-content padding>
-  <h1>John</h1>
-  <h2>Vegan Event</h2>
-  <p>
-    I would like to invite you to my event!
-  </p>
+  <div class="photo"></div>
+  <ion-list no-lines>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="../../assets/avatars/broccoli.png">
+      </ion-avatar>
+      <h1>John</h1>
+      <p>Vegan since 2017</p>
+      <button ion-button icon-only item-end (click)="close()">
+        <ion-icon class="close" name="close"></ion-icon>
+      </button>
+    </ion-item>
+  </ion-list>
+
+  <ion-list class="content-story" no-lines>
+    <ion-item-divider color="green">Author's note</ion-item-divider>
+    <ion-item>
+      <h1>Vegan Event</h1>
+    </ion-item>
+    <ion-item>
+      <p>I would like to invite you to my event!</p>
+    </ion-item>
+  </ion-list>
+  <ion-item-divider color="green">Tips</ion-item-divider>
 </ion-content>
