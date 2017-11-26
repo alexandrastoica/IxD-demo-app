@@ -8,6 +8,7 @@ import { ProfilePage } from '../pages/profile/profile';
 import { FiltersPage } from '../pages/filters/filters';
 import { StoryPage } from '../pages/story/story';
 import { ExplorePage } from '../pages/explore/explore';
+import { SavedPage } from '../pages/saved/saved';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -26,6 +27,7 @@ import { MapPinComponent } from '../components/map-pin/map-pin';
     FiltersPage,
     StoryPage,
     TabsPage,
+    SavedPage,
     MapPinComponent
   ],
   imports: [
@@ -41,6 +43,7 @@ import { MapPinComponent } from '../components/map-pin/map-pin';
     FiltersPage,
     StoryPage,
     TabsPage,
+    SavedPage,
     MapPinComponent
   ],
   providers: [
