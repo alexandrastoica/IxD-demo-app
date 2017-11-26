@@ -1,19 +1,46 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Profile
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-
 <ion-content>
-  <ion-list>
+  <ion-list no-lines padding-top>
     <ion-item>
       <ion-avatar item-start>
         <img src="../../assets/avatars/broccoli.png">
       </ion-avatar>
-      <h2>You</h2>
+      <h1>You</h1>
       <p>Vegan since 2017</p>
     </ion-item>
+
+    <ion-item>
+      <ion-grid class="progress">
+        <ion-row>
+          <ion-col class="level"></ion-col>
+          <ion-col class="level"></ion-col>
+          <ion-col></ion-col>
+          <ion-col></ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <ion-item-divider color="light">Achievements</ion-item-divider>
+    <ion-grid class="stats">
+      <ion-row align-items-center>
+        <ion-col col-3 text-center class="number">3</ion-col>
+        <ion-col col-9>Vegan restaurants visited</ion-col>
+      </ion-row>
+      <ion-row align-items-center>
+        <ion-col col-3 text-center class="number">7</ion-col>
+        <ion-col col-9>Vegan events attended</ion-col>
+      </ion-row>
+      <ion-row align-items-center>
+        <ion-col col-3 text-center class="number">4</ion-col>
+        <ion-col col-9>Tips shared</ion-col>
+      </ion-row>
+      <ion-row align-items-center>
+        <ion-col col-3 text-center class="number">5</ion-col>
+        <ion-col col-9>Questions asked</ion-col>
+      </ion-row>
+      <ion-row align-items-center>
+        <ion-col col-3 text-center class="number">10</ion-col>
+        <ion-col col-9>Questions answered</ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-list>
 </ion-content>

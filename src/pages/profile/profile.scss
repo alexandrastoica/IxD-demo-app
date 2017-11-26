@@ -1,3 +1,40 @@
-page-contact {
+page-profile {
+  ion-avatar {
+    min-width: 60px !important;
+    min-height: 60px !important;
+
+    img {
+      width: 100% !important;
+      height: 100% !important;
+    }
+  }
+
+  .progress{
+    ion-col {
+      background: color($colors, secondary);
+      border: 1 solid #fff;
+      border-color: #fff;
+      border-width: 2px;
+      border-style: solid;
+      box-sizing: border-box;
+    }
+
+    .level {
+      background: color($colors, primary);
+    }
+  }
+
+  .stats {
+    ion-col {
+      font-size: 1.2em;
+    }
+    .number {
+      font-size: 3em;
+      color: color($colors, orange);
+    }
+    ion-row {
+      padding: 20px;
+    }
+  }
 
 }
