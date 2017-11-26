@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, ViewController } from 'ionic-angular';
 
 @Component({
   selector: 'page-add',
@@ -7,8 +7,12 @@ import { NavController } from 'ionic-angular';
 })
 export class AddPage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public view: ViewController) {
 
+  }
+
+  close() {
+    this.view.dismiss();
   }
 
 }

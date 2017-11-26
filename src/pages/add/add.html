@@ -1,11 +1,56 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Add
-    </ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="close()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
+  <textarea placeholder="Want to share something?" autofocus></textarea>
+  <ion-grid>
+    <ion-row class="type" align-items-center>
+      <ion-col>
+        <ion-icon class="disabled" name="restaurant"></ion-icon>
+      </ion-col>
+      <ion-col>
+        <ion-icon class="disabled" name="calendar"></ion-icon>
+      </ion-col>
+      <ion-col>
+        <ion-icon class="disabled" name="megaphone"></ion-icon>
+      </ion-col>
+      <ion-col>
+        <ion-icon class="disabled" name="bulb"></ion-icon>
+      </ion-col>
+      <ion-col>
+        <ion-icon class="disabled" name="pizza"></ion-icon>
+      </ion-col>
+      <ion-col>
+        <ion-icon class="disabled" name="chatbubbles"></ion-icon>
+      </ion-col>
+    </ion-row>
 
+    <ion-row class="settings" justify-content-center>
+      <ion-col>
+        <button ion-button icon-only class="open">
+          <ion-icon name="camera"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-only class="open">
+          <ion-icon name="pin"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="settings-text" justify-content-center>
+      <ion-col>
+        Open Camera
+      </ion-col>
+      <ion-col>
+        Add Location
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
