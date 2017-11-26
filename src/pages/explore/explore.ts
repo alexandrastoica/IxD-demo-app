@@ -4,6 +4,7 @@ import { Geolocation } from '@ionic-native/geolocation';
 
 import { FiltersPage } from '../filters/filters';
 import { StoryPage } from '../story/story';
+import { AddPage } from '../add/add';
 
 declare var google;
 
@@ -340,6 +341,12 @@ export class ExplorePage {
   openStory() {
     // opens post/story of the user
     let modal = this.modal.create(StoryPage);
+    modal.present();
+  }
+
+  add() {
+    // opens modal to add content to map
+    let modal = this.modal.create(AddPage);
     modal.present();
   }
 }
