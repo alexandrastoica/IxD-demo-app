@@ -1,0 +1,82 @@
+<ion-header>
+  <div padding>
+    <ion-segment [(ngModel)]="type">
+      <ion-segment-button value="tip">
+        Tips
+      </ion-segment-button>
+      <ion-segment-button value="event">
+        Events
+      </ion-segment-button>
+      <ion-segment-button value="questions">
+        Questions
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+</ion-header>
+
+
+<ion-content>
+  <div [ngSwitch]="type">
+    <ion-list *ngSwitchCase="'tip'">
+      <ion-item-sliding>
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="../../assets/avatars/tomato.png">
+          </ion-avatar>
+          <h2>Ruby</h2>
+          <p>Tip 1</p>
+        </ion-item>
+        <ion-item-options side="right">
+          <button ion-button color="orange">
+            <ion-icon name="trash"></ion-icon>
+            Remove
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="../../assets/avatars/tomato.png">
+        </ion-avatar>
+        <h2>Ruby</h2>
+        <p>Tip 2</p>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'event'">
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="../../assets/avatars/tomato.png">
+        </ion-avatar>
+        <h2>Ruby</h2>
+        <p>Event 1</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="../../assets/avatars/tomato.png">
+        </ion-avatar>
+        <h2>Ruby</h2>
+        <p>Event 2</p>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'questions'">
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="../../assets/avatars/tomato.png">
+        </ion-avatar>
+        <h2>Ruby asked</h2>
+        <p>Question 1</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="../../assets/avatars/tomato.png">
+        </ion-avatar>
+        <h2>You answered Ruby's question</h2>
+        <p>Question 2</p>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
