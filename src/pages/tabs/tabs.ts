@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { AddPage } from '../add/add';
+import { SavedPage } from '../saved/saved';
 import { ExplorePage } from '../explore/explore';
 import { ProfilePage } from '../profile/profile';
 
@@ -10,7 +10,7 @@ import { ProfilePage } from '../profile/profile';
 export class TabsPage {
 
   tab1Root = ExplorePage;
-  tab2Root = AddPage;
+  tab2Root = SavedPage;
   tab3Root = ProfilePage;
 
   constructor() {
