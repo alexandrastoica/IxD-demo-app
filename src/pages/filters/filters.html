@@ -16,7 +16,7 @@
         <ion-icon name="restaurant"></ion-icon>
       </ion-col>
       <ion-col>
-        <ion-icon name="calendar"></ion-icon>
+        <ion-icon [class.disabled]="active" (click)="!active" name="calendar"></ion-icon>
       </ion-col>
       <ion-col>
         <ion-icon name="megaphone"></ion-icon>
@@ -40,7 +40,7 @@
         <ion-icon name="bulb"></ion-icon>
       </ion-col>
       <ion-col>
-        <ion-icon name="pizza"></ion-icon>
+        <ion-icon name="cart"></ion-icon>
       </ion-col>
       <ion-col>
         <ion-icon [class.disabled]="active" (click)="!active" name="chatbubbles"></ion-icon>
@@ -56,6 +56,30 @@
       </ion-col>
       <ion-col>
         Questions
+      </ion-col>
+    </ion-row>
+
+    <ion-row justify-content-center>
+      <ion-col>
+        <ion-icon name="people"></ion-icon>
+      </ion-col>
+      <ion-col>
+        <ion-icon name="briefcase"></ion-icon>
+      </ion-col>
+      <ion-col>
+        <ion-icon name="bowtie"></ion-icon>
+      </ion-col>
+    </ion-row>
+
+    <ion-row justify-content-center>
+      <ion-col>
+        Meetups
+      </ion-col>
+      <ion-col>
+        Stores
+      </ion-col>
+      <ion-col>
+        Beauty
       </ion-col>
     </ion-row>
   </ion-grid>
