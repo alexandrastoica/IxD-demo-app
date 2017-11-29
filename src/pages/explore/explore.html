@@ -2,6 +2,10 @@
   <button ion-fab color="orange" (click)="filter()"><ion-icon name="options"></ion-icon></button>
 </ion-fab>
 
+<ion-fab center top>
+  <button ion-fab color="yellow" (click)="add()"><ion-icon name="camera"></ion-icon></button>
+</ion-fab>
+
 <ion-fab right top>
   <button ion-fab color="orange" (click)="add()"><ion-icon name="add"></ion-icon></button>
 </ion-fab>
@@ -11,12 +15,13 @@
 
   <ion-slides (ionSlideDidChange)="slideChanged()">
     <ion-slide *ngFor="let pin of randomGeoPoints; let i = index">
-      <ion-card>
+      <ion-card (click)='openStory()'>
         <ion-card-header>
           Preview of Post {{i+1}}
         </ion-card-header>
         <ion-card-content>
           The content of a post can be a photo/video with text, a tip, a question, an announcement.
+          <p>Tap to see more</p>
         </ion-card-content>
       </ion-card>
     </ion-slide>
