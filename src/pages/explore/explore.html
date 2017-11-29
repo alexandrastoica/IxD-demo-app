@@ -8,15 +8,9 @@
 
 <ion-content>
   <div #map id="map"></div>
-  <map-pin id="'pin'+i" 
-    *ngFor="let pin of pins; let i = index"
-    (click)="openStory()"
-    [style.top.px]="pin.h"
-    [style.left.px]="pin.w">
-  </map-pin>
 
-  <ion-slides>
-    <ion-slide *ngFor="let pin of pins; let i = index">
+  <ion-slides (ionSlideDidChange)="slideChanged()">
+    <ion-slide *ngFor="let pin of randomGeoPoints; let i = index">
       <ion-card>
         <ion-card-header>
           Preview of Post {{i+1}}

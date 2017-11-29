@@ -1,5 +1,5 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { Platform, NavController, ModalController } from 'ionic-angular';
+import { Platform, NavController, ModalController, Slides } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 
 import { FiltersPage } from '../filters/filters';
@@ -14,12 +14,12 @@ declare var google;
 })
 export class ExplorePage {
   @ViewChild("map") map: ElementRef;
+  @ViewChild(Slides) slides: Slides;
   googleMap: any;
-  pins: Array<any>;
   isMoving: boolean = false;
+  randomGeoPoints: Array<any> = [];
 
   constructor(public navCtrl: NavController, private platform: Platform, private geoLoc: Geolocation, public modal: ModalController) {
-    this.setPinsLocation();
     this.isMoving = false;
   }
 
@@ -27,37 +27,6 @@ export class ExplorePage {
     this.platform.ready().then(() => {
       this.initMap();
     });
-  }
-
-  setPinsLocation() {
-    // pins are user posts on the map,
-    // for the demo, their coords are randomly generated
-    this.pins = [
-      {
-        w: Math.floor(Math.random() * 300) + 50,
-        h: Math.floor(Math.random() * 450) + 50
-      },
-      {
-        w: Math.floor(Math.random() * 300) + 50,
-        h: Math.floor(Math.random() * 650) + 50
-      },
-      {
-        w: Math.floor(Math.random() * 300) + 50,
-        h: Math.floor(Math.random() * 450) + 50
-      },
-      {
-        w: Math.floor(Math.random() * 300) + 50,
-        h: Math.floor(Math.random() * 750) + 50
-      },
-      {
-        w: Math.floor(Math.random() * 300) + 50,
-        h: Math.floor(Math.random() * 400) + 50
-      },
-      {
-        w: Math.floor(Math.random() * 300) + 50,
-        h: Math.floor(Math.random() * 500) + 50
-      },
-    ];
   }
 
   initMap() {
@@ -322,10 +291,9 @@ export class ExplorePage {
       // initialise map
       this.googleMap = new google.maps.Map(this.map.nativeElement, mapOpt);
 
-      // TODO: listen for chenges of bounds and regenerate user posts
-      // this.googleMap.addListener('bounds_changed', () => {
-      //   this.isMoving = true;
-      // });
+      // place random markers in map
+      this.placeRandomMarkers(position);
+
 
     }, (err) => {
       console.log(err);
@@ -349,4 +317,59 @@ export class ExplorePage {
     let modal = this.modal.create(AddPage);
     modal.present();
   }
+
+  // when slide changes set center of map at
+  // the marker corresponding to the preview post
+  slideChanged() {
+    let currentIndex = this.slides.getActiveIndex();
+    let marker = this.randomGeoPoints[currentIndex];
+    this.googleMap.setCenter(marker);
+  }
+
+  // get random coordinates by center and radius
+  generateRandomPoints(center, radius) {
+  	let x0 = center.lng;
+  	let y0 = center.lat;
+  	// Convert Radius from meters to degrees.
+  	let rd = radius/111300;
+
+  	let u = Math.random();
+  	let v = Math.random();
+
+  	let w = rd * Math.sqrt(u);
+  	let t = 2 * Math.PI * v;
+  	let x = w * Math.cos(t);
+  	let y = w * Math.sin(t);
+
+  	let xp = x/Math.cos(y0);
+
+  	// resulting point
+  	return {'lat': y+y0, 'lng': xp+x0};
+  }
+
+  // place the markers on map
+  placeRandomMarkers(position) {
+    [0,1,2,3,4,5,6,7,8,9].forEach((i) => {
+      // generate a new point
+      let point = this.generateRandomPoints({'lat':position.coords.latitude, 'lng':position.coords.longitude}, 300);
+      // add it to the array
+      this.randomGeoPoints.push(point);
+
+      // place the marker on the map
+      let marker = new google.maps.Marker({
+        position: point,
+        map: this.googleMap,
+        icon: '../../assets/avatars/tomato.png',
+        id: i
+      });
+
+      // set center of map on click
+      // change preview slide to the corresponding one
+      marker.addListener('click', () => {
+        this.googleMap.setCenter(marker.getPosition());
+        this.slides.slideTo(marker.get('id'), 100);
+      });
+    });
+  }
+
 }
