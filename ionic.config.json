@@ -1,6 +1,6 @@
 {
   "name": "ixd_app",
-  "app_id": "",
+  "app_id": "c05f83da",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}

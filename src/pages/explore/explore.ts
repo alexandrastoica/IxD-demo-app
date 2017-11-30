@@ -351,7 +351,7 @@ export class ExplorePage {
   placeRandomMarkers(position) {
     [0,1,2,3,4,5,6,7,8,9].forEach((i) => {
       // generate a new point
-      let point = this.generateRandomPoints({'lat':position.coords.latitude, 'lng':position.coords.longitude}, 300);
+      let point = this.generateRandomPoints({'lat':position.coords.latitude, 'lng':position.coords.longitude}, 500);
       // add it to the array
       this.randomGeoPoints.push(point);
 

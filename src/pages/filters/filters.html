@@ -11,6 +11,9 @@
 
 <ion-content padding>
   <ion-grid>
+    <ion-row>
+      <h1>Category</h1>
+    </ion-row>
     <ion-row justify-content-center>
       <ion-col>
         <ion-icon name="restaurant"></ion-icon>
@@ -80,6 +83,20 @@
       </ion-col>
       <ion-col>
         Beauty
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid padding-top>
+    <ion-row>
+      <h1>Price</h1>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <ion-range  min="5" max="200" step="2">
+          <p range-left>5</p>
+          <p range-right>200</p>
+        </ion-range>
       </ion-col>
     </ion-row>
   </ion-grid>
